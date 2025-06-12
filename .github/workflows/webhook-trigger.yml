@@ -14,5 +14,5 @@ jobs:
           echo "Variable Value: ${{ github.event.client_payload.value }}"
       - name: Print credentials from webhook
         run: |
-          echo "Variable Username: ${{ github.event.client_creds.username }}"
-          echo "Variable Password: ${{ github.event.client_creds.password }}"
+          echo "Variable Username: ${{ github.event.client_payload.client_creds.username }}"
+          echo "Variable Password: ${{ github.event.client_payload.client_creds.password }}"
