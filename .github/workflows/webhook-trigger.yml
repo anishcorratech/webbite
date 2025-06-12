@@ -16,3 +16,7 @@ jobs:
         run: |
           echo "Variable Username: ${{ github.event.client_payload.client_creds.username }}"
           echo "Variable Password: ${{ github.event.client_payload.client_creds.password }}"
+      - name: Print config from webhook
+        run: |
+          echo "Variable debug config: ${{ github.event.client_config.debug }}"
+          echo "Variable logging config: ${{ github.event.client_config.logging }}"
