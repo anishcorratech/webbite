@@ -1,0 +1,14 @@
+name: Webhook Triggered Workflow
+
+on:
+  repository_dispatch:
+    types: [custom-webhook]
+
+jobs:
+  print-variable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print variable from webhook
+        run: |
+          echo "Variable Name: ${{ github.event.client_payload.name }}"
+          echo "Variable Value: ${{ github.event.client_payload.value }}"
